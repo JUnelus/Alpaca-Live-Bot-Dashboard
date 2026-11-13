@@ -1,12 +1,12 @@
 {
  "public": true,
- "generated_at": "2026-11-13T03:56:12+00:00",
- "trading_day": "2026-11-12",
+ "generated_at": "2026-11-13T15:29:15+00:00",
+ "trading_day": "2026-11-13",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": true,
-  "last_run_day": "2026-11-12",
+  "day_finalized": false,
+  "last_run_day": "2026-11-13",
   "positions_live": true
  },
  "account": {
@@ -24,87 +24,92 @@
   "current_rules_avg_pct": -0.27
  },
  "today": {
-  "run_at": null,
-  "market_filter_blocked": [],
+  "run_at": "2026-11-13T15:29:03.290865+00:00",
+  "market_filter_blocked": [
+   "NVDA",
+   "MSFT",
+   "VTI",
+   "BTC/USD"
+  ],
   "decisions": [
    {
     "symbol": "AAPL",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": 0.87,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "NVDA",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": -3.46,
+    "why": "Market filter: QQQ -1.85% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "MSFT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": -0.53,
+    "why": "Market filter: QQQ -1.85% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "VTI",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": -1.14,
+    "why": "Market filter: QQQ -1.85% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "BTC/USD",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": -3.89,
+    "why": "Market filter: QQQ -1.85% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "LLY",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": -0.0,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "WMT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": 0.95,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "JPM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": 0.42,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "V",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": 1.0,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "XOM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": null,
-    "why": "No buy or sell signal",
+    "day_change_percent": 0.57,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    }
   ],
@@ -383,6 +388,14 @@
    "cumulative_return_pct": -0.36,
    "note": "",
    "finalized": true
+  },
+  {
+   "date": "2026-11-13",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.36,
+   "note": "",
+   "finalized": false
   }
  ],
  "trades": [
