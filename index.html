@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Trading Bot Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#070b14;--card:rgba(255,255,255,.04);--card-hover:rgba(255,255,255,.07);--border:rgba(255,255,255,.08);
+  --text:#e2e8f0;--muted:#64748b;--soft:#94a3b8;--cyan:#00e5ff;--green:#00ffaa;--purple:#a855f7;--yellow:#fbbf24;--red:#f87171;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(1200px 600px at 80% -10%,rgba(0,229,255,.07),transparent),radial-gradient(900px 500px at -10% 110%,rgba(168,85,247,.08),transparent),var(--bg)}
+.app{display:flex;min-height:100vh}
+.sidebar{width:220px;flex-shrink:0;background:rgba(7,11,20,.95);border-right:1px solid rgba(255,255,255,.06);padding:20px 14px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center;font-weight:700;color:#fff}
+.brand b{display:block;font-size:13px;color:#f1f5f9}
+.brand span{font-size:10px;color:#475569;letter-spacing:1px}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav p{font-size:10px;color:#475569;letter-spacing:1px;margin:0 0 6px 8px}
+.nav button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;color:var(--soft);font-size:13px}
+.nav button:hover{background:var(--card-hover);color:#fff}
+.nav button:focus-visible{outline:2px solid var(--cyan)}
+.nav button[aria-current=page]{background:linear-gradient(90deg,rgba(0,229,255,.14),rgba(168,85,247,.08));color:#fff;box-shadow:inset 2px 0 0 var(--cyan)}
+.side-foot{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:11px;color:#475569}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.dot.bad{background:var(--red);box-shadow:0 0 10px var(--red)}
+.main{flex:1;min-width:0;padding:22px max(16px,2.4vw) 40px}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+h1{margin:0;font-size:24px;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{font-size:11px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--soft);white-space:nowrap}
+.chip.live{color:var(--green);border-color:rgba(0,255,170,.25)}
+.chip.warn{color:var(--yellow);border-color:rgba(251,191,36,.3)}
+.chip.bad{color:var(--red);border-color:rgba(248,113,113,.3)}
+.glass{background:var(--card);border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(16px)}
+.lede{padding:14px 18px;font-size:14px;line-height:1.6;color:var(--soft);margin-bottom:16px}
+.lede b{color:#fff;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:16px}
+.kpi{padding:16px;transition:transform .25s ease,background .25s ease}
+.kpi:hover{background:var(--card-hover);transform:translateY(-2px)}
+.kpi .k{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.kpi .v{font-size:26px;font-weight:700;margin-top:6px;font-variant-numeric:tabular-nums}
+.kpi .n{font-size:12px;color:var(--muted);margin-top:4px}
+.bar{height:4px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+.bar i{display:block;height:100%;border-radius:999px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px;margin-bottom:16px}
+.panel{padding:16px;min-width:0}
+.panel h2{margin:0 0 4px;font-size:14px;font-weight:600;color:#f1f5f9}
+.panel .hint{margin:0 0 12px;font-size:12px;color:var(--muted)}
+.chart{position:relative;min-height:240px}
+.chart svg{display:block;width:100%}
+.axis{fill:var(--muted);font-size:11px}
+.tip{position:absolute;pointer-events:none;background:rgba(15,23,42,.96);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:12px;line-height:1.5;white-space:nowrap;z-index:3;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.tip .t{color:var(--muted)}
+.wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.05);white-space:nowrap;color:var(--text)}
+td.why{white-space:normal;min-width:220px;color:var(--soft)}
+th.num,td.num{text-align:right}
+tr:hover td{background:rgba(255,255,255,.02)}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:999px;border:1px solid var(--border)}
+.pill.buy,.pill.ok{color:var(--green);border-color:rgba(0,255,170,.3);background:rgba(0,255,170,.06)}
+.pill.sell,.pill.bad{color:var(--red);border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.06)}
+.pill.hold{color:var(--soft)}
+.pill.open{color:var(--cyan);border-color:rgba(0,229,255,.3)}
+.pos{color:var(--green)}.neg{color:var(--red)}
+.empty{color:var(--muted);font-size:13px;padding:14px 4px}
+.split{display:flex;height:10px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08);margin:10px 0 8px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
+.foot{margin-top:18px;font-size:11px;color:#475569;line-height:1.6}
+.error{padding:16px;color:var(--yellow)}
+[hidden]{display:none!important}
+@media (max-width:960px){.grid2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){
+  .app{flex-direction:column}
+  .sidebar{width:auto;height:auto;position:sticky;top:0;z-index:5;flex-direction:row;align-items:center;padding:10px 16px;gap:12px;overflow-x:auto}
+  .brand>div:last-child,.nav p,.side-foot{display:none}
+  .nav{flex-direction:row}
+  .nav button{padding:7px 10px;white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){.kpi{transition:none}.kpi:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo" aria-hidden="true">α</div><div><b>Live Trading Bot</b><span>ALPACA · FRACTIONAL</span></div></div>
+    <nav class="nav" aria-label="Views">
+      <p>MAIN MENU</p>
+      <button type="button" data-view="overview" aria-current="page">Overview</button>
+      <button type="button" data-view="today">Today's trades</button>
+      <button type="button" data-view="trades">Trade history</button>
+      <button type="button" data-view="days">Daily results</button>
+    </nav>
+    <div class="side-foot"><i class="dot" id="health-dot"></i><span id="health-text">Loading…</span></div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1>Live Trading Bot Hub</h1>
+        <p class="sub" id="subtitle">Loading the latest run…</p>
+      </div>
+      <div class="chips">
+        <span class="chip" id="mode-chip">—</span>
+        <span class="chip" id="day-chip">—</span>
+        <span class="chip" id="updated-chip">—</span>
+      </div>
+    </div>
+    <div class="glass error" id="error" hidden></div>
+
+    <section data-section="overview">
+      <div class="glass lede" id="lede">—</div>
+      <div class="kpis" id="kpis"></div>
+      <div class="grid2">
+        <div class="glass panel">
+          <h2 id="curve-title">Cumulative P&amp;L</h2>
+          <p class="hint">Each point is one trading day since live trading began. Hover for the day.</p>
+          <div class="chart" id="curve"></div>
+        </div>
+        <div class="glass panel">
+          <h2>Today at a glance</h2>
+          <p class="hint" id="glance-hint">—</p>
+          <div class="wrap"><table><thead><tr><th>Symbol</th><th>Signal</th><th>Outcome</th></tr></thead><tbody id="glance"></tbody></table></div>
+          <div id="split-block">
+            <h2 style="margin-top:18px">Where the loss came from</h2>
+            <div class="split" id="split"></div>
+            <div class="legend" id="split-legend"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="today" hidden>
+      <div class="glass panel" style="margin-bottom:14px">
+        <h2>What the bot looked at and why</h2>
+        <p class="hint" id="run-hint">—</p>
+        <div class="wrap"><table>
+          <thead><tr><th>Symbol</th><th class="num">Day change</th><th>Signal</th><th class="num">Confidence</th><th>Why</th><th>Outcome</th></tr></thead>
+          <tbody id="decisions"></tbody>
+        </table></div>
+      </div>
+      <div class="glass panel">
+        <h2>Today's trades</h2>
+        <p class="hint">Positions opened today. Open positions show their move so far.</p>
+        <div class="wrap"><table>
+          <thead id="today-head"></thead>
+          <tbody id="today-trades"></tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section data-section="trades" hidden>
+      <div class="glass panel">
+        <h2>Trade history</h2>
+        <p class="hint" id="trades-hint">—</p>
+        <div class="wrap"><table><thead id="trades-head"></thead><tbody id="trades"></tbody></table></div>
+      </div>
+    </section>
+
+    <section data-section="days" hidden>
+      <div class="glass panel">
+        <h2>Daily results</h2>
+        <p class="hint" id="days-hint">—</p>
+        <div class="wrap"><table><thead id="days-head"></thead><tbody id="days"></tbody></table></div>
+      </div>
+    </section>
+
+    <p class="foot" id="foot"></p>
+  </main>
+</div>
+
+<script>
+(() => {
+  const REFRESH_MS = 60000;
+  const $ = (id) => document.getElementById(id);
+  let data = null;
+
+  const money = (v, dp = 2, signed = false) => {
+    if (v == null || !isFinite(v)) return '—';
+    const s = Math.abs(v).toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    if (+s.replace(/,/g, '') === 0) return '$' + s;
+    return (v < 0 ? '−' : signed ? '+' : '') + '$' + s;
+  };
+  const pct = (v, dp = 2) => {
+    if (v == null || !isFinite(v)) return '—';
+    const s = Math.abs(v).toFixed(dp);
+    return (+s === 0 ? '' : v < 0 ? '−' : '+') + s + '%';
+  };
+  const tone = (v) => (v == null || Math.abs(v) < 0.005 ? '' : v > 0 ? 'pos' : 'neg');
+  const dayLabel = (s, opts = { weekday: 'short', month: 'short', day: 'numeric' }) =>
+    new Date(s + 'T12:00:00Z').toLocaleDateString('en-US', { ...opts, timeZone: 'UTC' });
+  const el = (tag, text, cls) => { const n = document.createElement(tag); if (text != null) n.textContent = text; if (cls) n.className = cls; return n; };
+  const pill = (text, cls) => { const td = el('td'); td.append(el('span', text, 'pill ' + cls)); return td; };
+  const row = (cells) => { const tr = el('tr'); cells.forEach((c) => tr.append(c)); return tr; };
+  const td = (text, cls) => el('td', text, cls);
+  const head = (target, labels) => {
+    const tr = el('tr');
+    labels.forEach(([label, num]) => tr.append(el('th', label, num ? 'num' : '')));
+    target.replaceChildren(tr);
+  };
+  const empty = (tbody, cols, text) => { const t = el('td', text, 'empty'); t.colSpan = cols; tbody.replaceChildren(row([t])); };
+
+  // ---- navigation
+  const views = ['overview', 'today', 'trades', 'days'];
+  function show(view) {
+    if (!views.includes(view)) view = 'overview';
+    document.querySelectorAll('[data-section]').forEach((s) => { s.hidden = s.dataset.section !== view; });
+    document.querySelectorAll('.nav button').forEach((b) => {
+      if (b.dataset.view === view) b.setAttribute('aria-current', 'page');
+      else b.removeAttribute('aria-current');
+    });
+    if (location.hash.slice(1) !== view) { history.replaceState(null, '', '#' + view); window.scrollTo(0, 0); }
+    if (view === 'overview' && data) drawCurve();
+  }
+  document.querySelectorAll('.nav button').forEach((b) => b.addEventListener('click', () => show(b.dataset.view)));
+  window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+
+  // ---- rendering
+  function render() {
+    const d = data, pub = d.public, a = d.account, s = d.stats, t = d.today, st = d.status;
+    const offline = !pub && !st.broker_live;
+    $('mode-chip').textContent = pub ? 'Public view · percentages only'
+      : offline ? 'Private view · broker offline, showing saved data' : 'Private view · live broker data';
+    $('mode-chip').className = 'chip ' + (pub ? '' : offline ? 'warn' : 'live');
+    $('day-chip').textContent = dayLabel(d.trading_day, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) + (st.day_finalized ? ' · closed' : ' · in progress');
+    const updated = new Date(d.generated_at);
+    $('updated-chip').textContent = 'Updated ' + updated.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }) + ' ET';
+    $('subtitle').textContent = `Fractional day-trading on a live Alpaca account since ${dayLabel(d.live_since, { month: 'long', day: 'numeric', year: 'numeric' })}`
+      + (pub ? ' · refreshed after each bot run' : offline ? ' · balances are from the bot\'s last saved state, not the broker' : ' · refreshes every minute');
+    $('health-dot').className = 'dot' + (st.automation_blocked ? ' bad' : '');
+    $('health-text').textContent = st.automation_blocked ? 'Automation blocked' : 'Automation running';
+
+    // Lede
+    const lede = $('lede'); lede.replaceChildren();
+    const add = (text, strong) => lede.append(strong ? el('b', text) : document.createTextNode(text));
+    const traded = t.trades.length;
+    add(traded ? `The bot opened ${traded} position${traded === 1 ? '' : 's'} today` : 'No trades today');
+    if (traded) { add(' and the day is at '); add(pub ? pct(a.daily_return_pct, 3) : money(a.daily_pnl, 2, true), true); }
+    add('. Since live trading began the account is ');
+    add(pub ? pct(a.cumulative_return_pct) : money(a.cumulative_pnl, 2, true), true);
+    if (a.fee_share_pct) { add(', and broker fees make up '); add(a.fee_share_pct + '%', true); add(' of that loss'); }
+    add('.');
+    if (t.market_filter_blocked && t.market_filter_blocked.length) add(` The market filter held ${t.market_filter_blocked.join(', ')} because the market was falling.`);
+
+    // KPIs
+    const kpis = pub ? [
+      ['Today', pct(a.daily_return_pct, 3), tone(a.daily_return_pct), `${traded} trades opened`],
+      ['Since launch', pct(a.cumulative_return_pct), tone(a.cumulative_return_pct), 'return on deposits, after fees'],
+      ['Win rate', s.win_rate_pct == null ? '—' : s.win_rate_pct.toFixed(1) + '%', '', `${s.wins} of ${s.trades_total} trades`],
+      ['Current rules', String(s.current_rules_trades), '', `${s.current_rules_stopouts} stop-outs · avg ${pct(s.current_rules_avg_pct)}`],
+      ['Open positions', String(a.open_positions), '', st.positions_live === false ? 'as of the last recorded run' : st.day_finalized ? 'flat after the 3 PM close-out' : 'closed by 3 PM ET'],
+    ] : [
+      ['Today', money(a.daily_pnl, 2, true), tone(a.daily_pnl), `${traded} trades · ${pct(a.daily_return_pct, 3)}`],
+      ['Equity', money(a.equity), '', `on ${money(a.deposits, 0)} deposited`],
+      ['Cumulative P&L', money(a.cumulative_pnl, 2, true), tone(a.cumulative_pnl), pct(a.cumulative_return_pct) + ' since launch'],
+      ['Fees paid', money(a.fees_total, 2, true), tone(a.fees_total), `price moves ${money(a.price_pnl_total, 2, true)}`],
+      ['Win rate', s.win_rate_pct == null ? '—' : s.win_rate_pct.toFixed(1) + '%', '', `${s.wins} of ${s.trades_total} trades`],
+      ['Current rules', String(s.current_rules_trades), '', `${s.current_rules_stopouts} stop-outs · avg ${pct(s.current_rules_avg_pct)}`],
+    ];
+    const accents = ['var(--cyan)', 'var(--green)', 'var(--purple)', 'var(--yellow)', 'var(--cyan)', 'var(--purple)'];
+    $('kpis').replaceChildren(...kpis.map(([k, v, cls, n], i) => {
+      const card = el('div', null, 'glass kpi');
+      card.append(el('div', k, 'k'), el('div', v, 'v ' + cls), el('div', n, 'n'));
+      const bar = el('div', null, 'bar'); const fill = el('i'); fill.style.width = '100%'; fill.style.background = accents[i]; fill.style.opacity = '.55';
+      bar.append(fill); card.append(bar);
+      return card;
+    }));
+
+    // Glance
+    const glance = $('glance');
+    $('glance-hint').textContent = t.run_at
+      ? 'From the ' + new Date(t.run_at).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }) + ' ET run.'
+      : 'No live run recorded yet for this day.';
+    if (!t.decisions.length) empty(glance, 3, 'No decisions recorded for this day.');
+    else glance.replaceChildren(...t.decisions.map((x) => row([td(x.symbol), pill(x.signal.toUpperCase(), x.signal), td(x.outcome, x.outcome === 'Bought' || x.outcome === 'Sold' ? 'pos' : '')])));
+
+    // Split
+    const splitBlock = $('split-block');
+    splitBlock.hidden = pub || !(a.fees_total < 0 && a.cumulative_pnl < 0);
+    if (!splitBlock.hidden) {
+      const fee = Math.abs(a.fees_total), price = Math.abs(Math.min(0, a.price_pnl_total)), tot = fee + price || 1;
+      const f = el('i'); f.style.cssText = `display:block;width:${(100 * fee) / tot}%;background:var(--red)`;
+      const p = el('i'); p.style.cssText = `display:block;width:${(100 * price) / tot}%;background:var(--purple)`;
+      $('split').replaceChildren(f, p);
+      const l1 = el('span'); l1.append(Object.assign(el('i', null, 'sw'), { style: 'background:var(--red)' }), document.createTextNode('Fees ' + money(a.fees_total, 2, true)));
+      const l2 = el('span'); l2.append(Object.assign(el('i', null, 'sw'), { style: 'background:var(--purple)' }), document.createTextNode('Price moves ' + money(a.price_pnl_total, 2, true)));
+      $('split-legend').replaceChildren(l1, l2);
+    }
+
+    // Today: decisions with reasons
+    $('run-hint').textContent = (t.run_at ? 'From the ' + new Date(t.run_at).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }) + ' ET live run. ' : '')
+      + 'A buy needs a quality asset on a dip and a confidence of at least 0.70; the market filter holds buys when SPY or QQQ is down more than 0.3%.';
+    const dec = $('decisions');
+    if (!t.decisions.length) empty(dec, 6, 'The live run has not recorded decisions for this day.');
+    else dec.replaceChildren(...t.decisions.map((x) => row([
+      td(x.symbol), td(pct(x.day_change_percent), 'num ' + tone(x.day_change_percent)), pill(x.signal.toUpperCase(), x.signal),
+      td(x.confidence == null ? '—' : x.confidence.toFixed(2), 'num'), td(x.why || '—', 'why'),
+      td(x.outcome, x.outcome === 'Bought' || x.outcome === 'Sold' ? 'pos' : ''),
+    ])));
+
+    // Today: trades
+    head($('today-head'), pub
+      ? [['Symbol'], ['Status'], ['Exit'], ['Move', 1]]
+      : [['Symbol'], ['Status'], ['Entry', 1], ['Now / exit', 1], ['Exit'], ['Move', 1], ['P&L', 1]]);
+    const tt = $('today-trades');
+    if (!t.trades.length) empty(tt, 7, 'No positions were opened today.');
+    else tt.replaceChildren(...t.trades.map((x) => row(pub
+      ? [td(x.symbol), pill(x.status, x.status === 'open' ? 'open' : 'hold'), td(x.exit), td(pct(x.pnl_pct), 'num ' + tone(x.pnl_pct))]
+      : [td(x.symbol), pill(x.status, x.status === 'open' ? 'open' : 'hold'), td(money(x.entry_price), 'num'), td(money(x.exit_price), 'num'),
+         td(x.exit), td(pct(x.pnl_pct), 'num ' + tone(x.pnl_pct)), td(money(x.pnl, 3, true), 'num ' + tone(x.pnl))])));
+
+    // Trade history
+    const closed = d.trades.filter((x) => x.status === 'closed');
+    $('trades-hint').textContent = `${closed.length} completed trades, newest first. Trade results use fill prices before broker fees.`;
+    head($('trades-head'), pub
+      ? [['Date'], ['Symbol'], ['Exit'], ['Rules'], ['Move', 1]]
+      : [['Date'], ['Symbol'], ['Entry', 1], ['Exit price', 1], ['Exit'], ['Rules'], ['Move', 1], ['P&L', 1]]);
+    $('trades').replaceChildren(...closed.slice().reverse().map((x) => row(pub
+      ? [td(dayLabel(x.date)), td(x.symbol), td(x.exit), td(x.rules === 'current' ? 'Current' : 'Original'), td(pct(x.pnl_pct), 'num ' + tone(x.pnl_pct))]
+      : [td(dayLabel(x.date)), td(x.symbol), td(money(x.entry_price), 'num'), td(money(x.exit_price), 'num'), td(x.exit),
+         td(x.rules === 'current' ? 'Current' : 'Original'), td(pct(x.pnl_pct), 'num ' + tone(x.pnl_pct)), td(money(x.pnl, 3, true), 'num ' + tone(x.pnl))])));
+
+    // Daily results
+    $('days-hint').textContent = pub ? 'Daily return on the account, after broker fees.' : 'Daily P&L after broker fees, newest first.';
+    head($('days-head'), pub
+      ? [['Day'], ['Trades', 1], ['Day return', 1], ['Since launch', 1], ['Note']]
+      : [['Day'], ['Trades', 1], ['P&L', 1], ['Fees', 1], ['Cumulative', 1], ['Note']]);
+    $('days').replaceChildren(...d.history.slice().reverse().map((x) => row(pub
+      ? [td(dayLabel(x.date)), td(String(x.trades), 'num'), td(pct(x.daily_return_pct, 3), 'num ' + tone(x.daily_return_pct)), td(pct(x.cumulative_return_pct), 'num ' + tone(x.cumulative_return_pct)), td(x.note || '', 'why')]
+      : [td(dayLabel(x.date)), td(String(x.trades), 'num'), td(money(x.daily_pnl, 2, true), 'num ' + tone(x.daily_pnl)), td(money(x.fees, 2, true), 'num ' + tone(x.fees)),
+         td(money(x.cumulative_pnl, 2, true), 'num ' + tone(x.cumulative_pnl)), td(x.note || '', 'why')])));
+
+    $('curve-title').textContent = pub ? 'Return since launch' : 'Cumulative P&L';
+    $('foot').textContent = pub
+      ? 'Public view: percentages only, no account balances or dollar amounts. Not investment advice.'
+      : 'Private view served from this computer. Dollar figures come from the live Alpaca account (read-only) and the bot\'s committed state.';
+    drawCurve();
+  }
+
+  // ---- chart
+  function drawCurve() {
+    const box = $('curve');
+    if (!data || box.offsetParent === null) return;
+    const pub = data.public;
+    const pts = data.history.map((h) => ({ ...h, y: pub ? h.cumulative_return_pct : h.cumulative_pnl, dy: pub ? h.daily_return_pct : h.daily_pnl })).filter((p) => p.y != null);
+    box.replaceChildren();
+    if (pts.length < 2) { box.append(el('p', 'Not enough history yet.', 'empty')); return; }
+    const W = Math.max(280, box.clientWidth), H = 240, m = { t: 14, r: 14, b: 26, l: 56 };
+    const ys = pts.map((p) => p.y), lo = Math.min(0, ...ys), hi = Math.max(0, ...ys);
+    const pad = (hi - lo) * 0.12 || 0.1, y0 = lo - pad, y1 = hi + pad;
+    const X = (i) => m.l + (i * (W - m.l - m.r)) / (pts.length - 1);
+    const Y = (v) => m.t + ((y1 - v) * (H - m.t - m.b)) / (y1 - y0);
+    const fmt = (v) => (pub ? pct(v) : money(v, 2, true));
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', (pub ? 'Return since launch' : 'Cumulative P&L') + ' by trading day');
+    const mk = (tag, attrs) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
+    const defs = mk('defs', {}); const grad = mk('linearGradient', { id: 'fill', x1: 0, y1: 0, x2: 0, y2: 1 });
+    grad.append(mk('stop', { offset: '0%', 'stop-color': '#00e5ff', 'stop-opacity': '.35' }), mk('stop', { offset: '100%', 'stop-color': '#00e5ff', 'stop-opacity': '0' }));
+    defs.append(grad); svg.append(defs);
+    for (let k = 0; k <= 4; k++) {
+      const v = y0 + ((y1 - y0) * k) / 4, y = Y(v);
+      svg.append(mk('line', { x1: m.l, x2: W - m.r, y1: y, y2: y, stroke: 'rgba(255,255,255,.06)' }));
+      const lab = mk('text', { x: m.l - 8, y: y + 4, 'text-anchor': 'end', class: 'axis' }); lab.textContent = fmt(v); svg.append(lab);
+    }
+    svg.append(mk('line', { x1: m.l, x2: W - m.r, y1: Y(0), y2: Y(0), stroke: 'rgba(255,255,255,.22)', 'stroke-dasharray': '4 4' }));
+    const step = Math.ceil(pts.length / (W < 520 ? 4 : 7));
+    pts.forEach((p, i) => {
+      if (i % step && i !== pts.length - 1) return;
+      const lab = mk('text', { x: X(i), y: H - 6, 'text-anchor': i === 0 ? 'start' : i === pts.length - 1 ? 'end' : 'middle', class: 'axis' });
+      lab.textContent = dayLabel(p.date, { month: 'short', day: 'numeric' }); svg.append(lab);
+    });
+    const line = pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)},${Y(p.y).toFixed(1)}`).join('');
+    svg.append(mk('path', { d: `${line}L${X(pts.length - 1)},${Y(0)}L${X(0)},${Y(0)}Z`, fill: 'url(#fill)' }));
+    svg.append(mk('path', { d: line, fill: 'none', stroke: '#00e5ff', 'stroke-width': 2, 'stroke-linejoin': 'round' }));
+    const last = pts[pts.length - 1];
+    svg.append(mk('circle', { cx: X(pts.length - 1), cy: Y(last.y), r: 5, fill: '#070b14', stroke: '#00ffaa', 'stroke-width': 2 }));
+    const focus = mk('circle', { r: 4, fill: '#00ffaa', visibility: 'hidden' }); svg.append(focus);
+    const hit = mk('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }); svg.append(hit);
+    const tip = el('div', null, 'tip'); tip.hidden = true;
+    box.append(svg, tip);
+    hit.addEventListener('pointermove', (ev) => {
+      const r = svg.getBoundingClientRect(), sx = ((ev.clientX - r.left) * W) / r.width;
+      const i = Math.max(0, Math.min(pts.length - 1, Math.round(((sx - m.l) * (pts.length - 1)) / (W - m.l - m.r))));
+      const p = pts[i];
+      focus.setAttribute('cx', X(i)); focus.setAttribute('cy', Y(p.y)); focus.setAttribute('visibility', 'visible');
+      tip.replaceChildren(el('div', dayLabel(p.date, { weekday: 'short', month: 'short', day: 'numeric' }), 't'),
+        el('div', (pub ? 'Since launch ' : 'Cumulative ') + fmt(p.y)), el('div', 'Day ' + (pub ? pct(p.dy, 3) : money(p.dy, 2, true)) + ' · ' + p.trades + ' trades'));
+      if (p.note) tip.append(el('div', p.note, 't'));
+      tip.hidden = false;
+      const scale = r.width / W, left = X(i) * scale, top = Y(p.y) * scale;
+      tip.style.left = Math.max(0, Math.min(box.clientWidth - tip.offsetWidth, left - tip.offsetWidth / 2)) + 'px';
+      tip.style.top = Math.max(0, top - tip.offsetHeight - 12) + 'px';
+    });
+    hit.addEventListener('pointerleave', () => { tip.hidden = true; focus.setAttribute('visibility', 'hidden'); });
+  }
+  window.addEventListener('resize', () => { clearTimeout(drawCurve.t); drawCurve.t = setTimeout(drawCurve, 150); });
+
+  // ---- data
+  async function load() {
+    try {
+      const res = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      data = await res.json();
+      $('error').hidden = true;
+      render();
+    } catch (err) {
+      $('error').hidden = false;
+      $('error').textContent = 'Could not load the latest data (' + err.message + '). Showing the last update; retrying in a minute.';
+    }
+  }
+  show(location.hash.slice(1));
+  load();
+  setInterval(load, REFRESH_MS);
+})();
+</script>
+</body>
+</html>

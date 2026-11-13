@@ -1,0 +1,958 @@
+{
+ "public": true,
+ "generated_at": "2026-11-13T03:56:12+00:00",
+ "trading_day": "2026-11-12",
+ "live_since": "2026-09-28",
+ "status": {
+  "automation_blocked": false,
+  "day_finalized": true,
+  "last_run_day": "2026-11-12",
+  "positions_live": true
+ },
+ "account": {
+  "daily_return_pct": 0.0,
+  "cumulative_return_pct": -0.36,
+  "fee_share_pct": 68,
+  "open_positions": 0
+ },
+ "stats": {
+  "trades_total": 71,
+  "wins": 31,
+  "win_rate_pct": 43.7,
+  "current_rules_trades": 27,
+  "current_rules_stopouts": 2,
+  "current_rules_avg_pct": -0.27
+ },
+ "today": {
+  "run_at": null,
+  "market_filter_blocked": [],
+  "decisions": [
+   {
+    "symbol": "AAPL",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "NVDA",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "MSFT",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "VTI",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "BTC/USD",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "LLY",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "WMT",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "JPM",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "V",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "XOM",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": null,
+    "why": "No buy or sell signal",
+    "outcome": "Held"
+   }
+  ],
+  "trades": [],
+  "positions": []
+ },
+ "history": [
+  {
+   "date": "2026-09-28",
+   "trades": 5,
+   "daily_return_pct": -0.01,
+   "cumulative_return_pct": -0.01,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-09-29",
+   "trades": 4,
+   "daily_return_pct": -0.01,
+   "cumulative_return_pct": -0.015,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-09-30",
+   "trades": 1,
+   "daily_return_pct": -0.005,
+   "cumulative_return_pct": -0.02,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-01",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.02,
+   "note": "Skipped by safety check (ETH/USD data stale)",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-02",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.02,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-05",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.02,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-06",
+   "trades": 2,
+   "daily_return_pct": -0.005,
+   "cumulative_return_pct": -0.025,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-07",
+   "trades": 6,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.025,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-08",
+   "trades": 4,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.025,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-09",
+   "trades": 2,
+   "daily_return_pct": -0.005,
+   "cumulative_return_pct": -0.03,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-12",
+   "trades": 3,
+   "daily_return_pct": -0.02,
+   "cumulative_return_pct": -0.05,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-13",
+   "trades": 1,
+   "daily_return_pct": -0.025,
+   "cumulative_return_pct": -0.075,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-14",
+   "trades": 5,
+   "daily_return_pct": -0.1,
+   "cumulative_return_pct": -0.175,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-15",
+   "trades": 5,
+   "daily_return_pct": 0.11,
+   "cumulative_return_pct": -0.065,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-16",
+   "trades": 6,
+   "daily_return_pct": -0.105,
+   "cumulative_return_pct": -0.17,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-19",
+   "trades": 3,
+   "daily_return_pct": -0.02,
+   "cumulative_return_pct": -0.19,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-20",
+   "trades": 1,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.19,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-21",
+   "trades": 3,
+   "daily_return_pct": -0.005,
+   "cumulative_return_pct": -0.195,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-22",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.195,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-23",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.195,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-26",
+   "trades": 1,
+   "daily_return_pct": -0.015,
+   "cumulative_return_pct": -0.21,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-27",
+   "trades": 3,
+   "daily_return_pct": -0.02,
+   "cumulative_return_pct": -0.23,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-28",
+   "trades": 2,
+   "daily_return_pct": -0.015,
+   "cumulative_return_pct": -0.245,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-29",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.245,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-10-30",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.245,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-02",
+   "trades": 3,
+   "daily_return_pct": -0.025,
+   "cumulative_return_pct": -0.27,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-03",
+   "trades": 3,
+   "daily_return_pct": -0.02,
+   "cumulative_return_pct": -0.29,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-04",
+   "trades": 2,
+   "daily_return_pct": -0.04,
+   "cumulative_return_pct": -0.33,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-05",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.33,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-06",
+   "trades": 3,
+   "daily_return_pct": -0.01,
+   "cumulative_return_pct": -0.34,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-09",
+   "trades": 3,
+   "daily_return_pct": -0.02,
+   "cumulative_return_pct": -0.36,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-10",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.36,
+   "note": "",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-11",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.36,
+   "note": "Skipped by safety check (BTC/USD data flagged stale)",
+   "finalized": true
+  },
+  {
+   "date": "2026-11-12",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.36,
+   "note": "",
+   "finalized": true
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-09-28",
+   "symbol": "GOOGL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.17,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-28",
+   "symbol": "MSFT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.41,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-28",
+   "symbol": "AMZN",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.09,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-28",
+   "symbol": "VTI",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.17,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-28",
+   "symbol": "META",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.17,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-29",
+   "symbol": "AAPL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.69,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-29",
+   "symbol": "GOOGL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.51,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-29",
+   "symbol": "MSFT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.19,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-29",
+   "symbol": "LLY",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.05,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-09-30",
+   "symbol": "META",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -0.99,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-06",
+   "symbol": "AAPL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.46,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-06",
+   "symbol": "GOOGL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.81,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-07",
+   "symbol": "GOOGL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.87,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-07",
+   "symbol": "MSFT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.58,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-07",
+   "symbol": "AMZN",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.59,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-07",
+   "symbol": "VTI",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.32,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-07",
+   "symbol": "META",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.2,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-07",
+   "symbol": "AVGO",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.45,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-08",
+   "symbol": "NVDA",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.0,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-08",
+   "symbol": "AMZN",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.02,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-08",
+   "symbol": "AVGO",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.04,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-08",
+   "symbol": "LLY",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.12,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-09",
+   "symbol": "AAPL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.66,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-09",
+   "symbol": "META",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.04,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-12",
+   "symbol": "NVDA",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.13,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-12",
+   "symbol": "AMZN",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.43,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-12",
+   "symbol": "AVGO",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.53,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-13",
+   "symbol": "LLY",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.08,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-14",
+   "symbol": "NVDA",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.01,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-14",
+   "symbol": "MSFT",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.0,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-14",
+   "symbol": "VTI",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.82,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-14",
+   "symbol": "META",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.03,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-14",
+   "symbol": "AVGO",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.05,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-15",
+   "symbol": "NVDA",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.7,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-15",
+   "symbol": "AMZN",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.71,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-15",
+   "symbol": "VTI",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.86,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-15",
+   "symbol": "META",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.0,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-15",
+   "symbol": "AVGO",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.52,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-16",
+   "symbol": "NVDA",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -0.95,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-16",
+   "symbol": "GOOGL",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.01,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-16",
+   "symbol": "MSFT",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.0,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-16",
+   "symbol": "AMZN",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.01,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-16",
+   "symbol": "META",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -1.02,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-16",
+   "symbol": "AVGO",
+   "exit": "1% stop",
+   "status": "closed",
+   "pnl_pct": -0.94,
+   "rules": "v1"
+  },
+  {
+   "date": "2026-10-19",
+   "symbol": "LLY",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.4,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-19",
+   "symbol": "JPM",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -1.0,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-19",
+   "symbol": "XOM",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.46,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-20",
+   "symbol": "XOM",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.82,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-21",
+   "symbol": "GOOGL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.31,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-21",
+   "symbol": "LLY",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.46,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-21",
+   "symbol": "WMT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.03,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-26",
+   "symbol": "V",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.23,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-27",
+   "symbol": "WMT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.22,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-27",
+   "symbol": "V",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.27,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-27",
+   "symbol": "XOM",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -1.16,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-28",
+   "symbol": "AAPL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.02,
+   "rules": "current"
+  },
+  {
+   "date": "2026-10-28",
+   "symbol": "WMT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.16,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "AAPL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.61,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "LLY",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.66,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "XOM",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -1.56,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-03",
+   "symbol": "AAPL",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.38,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-03",
+   "symbol": "WMT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.27,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-03",
+   "symbol": "JPM",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.23,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-04",
+   "symbol": "NVDA",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -1.01,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-04",
+   "symbol": "XOM",
+   "exit": "2% stop",
+   "status": "closed",
+   "pnl_pct": -1.99,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-06",
+   "symbol": "MSFT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.08,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-06",
+   "symbol": "WMT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.48,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-06",
+   "symbol": "V",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.56,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-09",
+   "symbol": "NVDA",
+   "exit": "2% stop",
+   "status": "closed",
+   "pnl_pct": -2.01,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-09",
+   "symbol": "WMT",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.83,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-09",
+   "symbol": "V",
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.63,
+   "rules": "current"
+  }
+ ]
+}
