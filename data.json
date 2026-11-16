@@ -1,11 +1,11 @@
 {
  "public": true,
- "generated_at": "2026-11-16T19:10:42+00:00",
+ "generated_at": "2026-11-16T20:04:10+00:00",
  "trading_day": "2026-11-16",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": false,
+  "day_finalized": true,
   "last_run_day": "2026-11-16",
   "positions_live": true
  },
@@ -406,7 +406,7 @@
    "daily_return_pct": 0.0,
    "cumulative_return_pct": -0.36,
    "note": "",
-   "finalized": false
+   "finalized": true
   }
  ],
  "trades": [
