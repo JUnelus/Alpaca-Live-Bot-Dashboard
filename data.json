@@ -1,12 +1,12 @@
 {
  "public": true,
- "generated_at": "2026-11-16T20:04:10+00:00",
- "trading_day": "2026-11-16",
+ "generated_at": "2026-11-17T15:29:06+00:00",
+ "trading_day": "2026-11-17",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": true,
-  "last_run_day": "2026-11-16",
+  "day_finalized": false,
+  "last_run_day": "2026-11-17",
   "positions_live": true
  },
  "account": {
@@ -24,70 +24,69 @@
   "current_rules_avg_pct": -0.27
  },
  "today": {
-  "run_at": "2026-11-16T15:37:02.911279+00:00",
+  "run_at": "2026-11-17T15:28:53.671081+00:00",
   "market_filter_blocked": [
-   "AAPL",
    "MSFT",
    "NVDA",
    "VTI",
-   "BTC/USD",
+   "LLY",
    "JPM",
-   "XOM"
+   "V"
   ],
   "decisions": [
    {
     "symbol": "AAPL",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.53,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.3,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "MSFT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.66,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": -2.0,
+    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "NVDA",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -2.77,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": -1.39,
+    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "VTI",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -1.22,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
-   },
-   {
-    "symbol": "LLY",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": 1.06,
-    "why": "Wait for better value entry",
+    "day_change_percent": -0.48,
+    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "BTC/USD",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -1.94,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.13,
+    "why": "Wait for better value entry",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "LLY",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": -0.36,
+    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "WMT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.45,
+    "day_change_percent": -0.05,
     "why": "Wait for better value entry",
     "outcome": "Held"
    },
@@ -95,24 +94,24 @@
     "symbol": "JPM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -1.06,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": -1.22,
+    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "V",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 1.03,
-    "why": "Wait for better value entry",
+    "day_change_percent": -0.94,
+    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "XOM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -1.39,
-    "why": "Market filter: QQQ -2.35% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.76,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    }
   ],
@@ -407,6 +406,14 @@
    "cumulative_return_pct": -0.36,
    "note": "",
    "finalized": true
+  },
+  {
+   "date": "2026-11-17",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.36,
+   "note": "",
+   "finalized": false
   }
  ],
  "trades": [
