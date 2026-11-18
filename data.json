@@ -1,19 +1,19 @@
 {
  "public": true,
- "generated_at": "2026-11-17T20:04:09+00:00",
- "trading_day": "2026-11-17",
+ "generated_at": "2026-11-18T15:28:56+00:00",
+ "trading_day": "2026-11-18",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": true,
-  "last_run_day": "2026-11-17",
+  "day_finalized": false,
+  "last_run_day": "2026-11-18",
   "positions_live": true
  },
  "account": {
   "daily_return_pct": 0.0,
   "cumulative_return_pct": -0.36,
   "fee_share_pct": 68,
-  "open_positions": 0
+  "open_positions": 3
  },
  "stats": {
   "trades_total": 71,
@@ -24,99 +24,130 @@
   "current_rules_avg_pct": -0.27
  },
  "today": {
-  "run_at": "2026-11-17T15:28:53.671081+00:00",
-  "market_filter_blocked": [
-   "MSFT",
-   "NVDA",
-   "VTI",
-   "LLY",
-   "JPM",
-   "V"
-  ],
+  "run_at": "2026-11-18T15:28:46.394235+00:00",
+  "market_filter_blocked": [],
   "decisions": [
    {
     "symbol": "AAPL",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.3,
+    "day_change_percent": 0.37,
     "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "MSFT",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -2.0,
-    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.75,
+    "day_change_percent": -0.36,
+    "why": "DCA buy: quality asset on a mild dip",
+    "outcome": "Bought"
    },
    {
     "symbol": "NVDA",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -1.39,
-    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.85,
+    "day_change_percent": -1.12,
+    "why": "DCA buy: quality asset on a mild dip",
+    "outcome": "Bought"
    },
    {
     "symbol": "VTI",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.48,
-    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": -0.01,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "BTC/USD",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": 0.13,
-    "why": "Wait for better value entry",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 1.0,
+    "day_change_percent": -2.28,
+    "why": "DCA buy: quality asset on a deep pullback. Skipped: unable to guarantee broker-side protective stop placement for BTC/USD.",
+    "outcome": "Skipped"
    },
    {
     "symbol": "LLY",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -0.36,
-    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.85,
+    "day_change_percent": -1.2,
+    "why": "DCA buy: quality asset on a mild dip",
+    "outcome": "Bought"
    },
    {
     "symbol": "WMT",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -0.05,
-    "why": "Wait for better value entry",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.76,
+    "day_change_percent": -0.56,
+    "why": "DCA buy: quality asset on a mild dip. Skipped: concurrent position cap reached (3/3 open); new BUY orders wait for a free slot.",
+    "outcome": "Skipped"
    },
    {
     "symbol": "JPM",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -1.22,
-    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.82,
+    "day_change_percent": -0.91,
+    "why": "DCA buy: quality asset on a mild dip. Skipped: concurrent position cap reached (3/3 open); new BUY orders wait for a free slot.",
+    "outcome": "Skipped"
    },
    {
     "symbol": "V",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -0.94,
-    "why": "Market filter: SPY -0.47% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.76,
+    "day_change_percent": -0.5,
+    "why": "DCA buy: quality asset on a mild dip. Skipped: concurrent position cap reached (3/3 open); new BUY orders wait for a free slot.",
+    "outcome": "Skipped"
    },
    {
     "symbol": "XOM",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": 0.76,
-    "why": "Wait for better value entry",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.99,
+    "day_change_percent": -2.06,
+    "why": "DCA buy: quality asset on a deep pullback. Skipped: concurrent position cap reached (3/3 open); new BUY orders wait for a free slot.",
+    "outcome": "Skipped"
    }
   ],
-  "trades": [],
-  "positions": []
+  "trades": [
+   {
+    "date": "2026-11-18",
+    "symbol": "MSFT",
+    "exit": "Open",
+    "status": "open",
+    "pnl_pct": -0.0,
+    "rules": "current"
+   },
+   {
+    "date": "2026-11-18",
+    "symbol": "NVDA",
+    "exit": "Open",
+    "status": "open",
+    "pnl_pct": 0.06,
+    "rules": "current"
+   },
+   {
+    "date": "2026-11-18",
+    "symbol": "LLY",
+    "exit": "Open",
+    "status": "open",
+    "pnl_pct": 0.01,
+    "rules": "current"
+   }
+  ],
+  "positions": [
+   {
+    "symbol": "LLY",
+    "unrealized_pct": 0.01
+   },
+   {
+    "symbol": "MSFT",
+    "unrealized_pct": -0.0
+   },
+   {
+    "symbol": "NVDA",
+    "unrealized_pct": 0.06
+   }
+  ]
  },
  "history": [
   {
@@ -414,6 +445,14 @@
    "cumulative_return_pct": -0.36,
    "note": "",
    "finalized": true
+  },
+  {
+   "date": "2026-11-18",
+   "trades": 3,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.36,
+   "note": "",
+   "finalized": false
   }
  ],
  "trades": [
@@ -983,6 +1022,30 @@
    "exit": "3 PM close-out",
    "status": "closed",
    "pnl_pct": 0.63,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-18",
+   "symbol": "MSFT",
+   "exit": "Open",
+   "status": "open",
+   "pnl_pct": -0.0,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-18",
+   "symbol": "NVDA",
+   "exit": "Open",
+   "status": "open",
+   "pnl_pct": 0.06,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-18",
+   "symbol": "LLY",
+   "exit": "Open",
+   "status": "open",
+   "pnl_pct": 0.01,
    "rules": "current"
   }
  ]
