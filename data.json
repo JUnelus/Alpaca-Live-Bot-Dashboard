@@ -1,27 +1,27 @@
 {
  "public": true,
- "generated_at": "2026-11-18T19:10:02+00:00",
+ "generated_at": "2026-11-18T20:04:10+00:00",
  "trading_day": "2026-11-18",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": false,
+  "day_finalized": true,
   "last_run_day": "2026-11-18",
   "positions_live": true
  },
  "account": {
-  "daily_return_pct": -0.015,
-  "cumulative_return_pct": -0.375,
-  "fee_share_pct": 65,
-  "open_positions": 3
+  "daily_return_pct": -0.025,
+  "cumulative_return_pct": -0.385,
+  "fee_share_pct": 64,
+  "open_positions": 0
  },
  "stats": {
-  "trades_total": 71,
-  "wins": 31,
-  "win_rate_pct": 43.7,
-  "current_rules_trades": 27,
-  "current_rules_stopouts": 2,
-  "current_rules_avg_pct": -0.27
+  "trades_total": 74,
+  "wins": 32,
+  "win_rate_pct": 43.2,
+  "current_rules_trades": 30,
+  "current_rules_stopouts": 3,
+  "current_rules_avg_pct": -0.33
  },
  "today": {
   "run_at": "2026-11-18T15:28:46.394235+00:00",
@@ -112,42 +112,29 @@
    {
     "date": "2026-11-18",
     "symbol": "MSFT",
-    "exit": "Open",
-    "status": "open",
-    "pnl_pct": 0.86,
+    "exit": "3 PM close-out",
+    "status": "closed",
+    "pnl_pct": 0.77,
     "rules": "current"
    },
    {
     "date": "2026-11-18",
     "symbol": "NVDA",
-    "exit": "Open",
-    "status": "open",
-    "pnl_pct": -1.5,
+    "exit": "2% stop",
+    "status": "closed",
+    "pnl_pct": -2.04,
     "rules": "current"
    },
    {
     "date": "2026-11-18",
     "symbol": "LLY",
-    "exit": "Open",
-    "status": "open",
-    "pnl_pct": -0.74,
+    "exit": "3 PM close-out",
+    "status": "closed",
+    "pnl_pct": -1.2,
     "rules": "current"
    }
   ],
-  "positions": [
-   {
-    "symbol": "LLY",
-    "unrealized_pct": -0.74
-   },
-   {
-    "symbol": "MSFT",
-    "unrealized_pct": 0.86
-   },
-   {
-    "symbol": "NVDA",
-    "unrealized_pct": -1.5
-   }
-  ]
+  "positions": []
  },
  "history": [
   {
@@ -449,10 +436,10 @@
   {
    "date": "2026-11-18",
    "trades": 3,
-   "daily_return_pct": -0.015,
-   "cumulative_return_pct": -0.375,
+   "daily_return_pct": -0.025,
+   "cumulative_return_pct": -0.385,
    "note": "",
-   "finalized": false
+   "finalized": true
   }
  ],
  "trades": [
@@ -1027,25 +1014,25 @@
   {
    "date": "2026-11-18",
    "symbol": "MSFT",
-   "exit": "Open",
-   "status": "open",
-   "pnl_pct": 0.86,
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 0.77,
    "rules": "current"
   },
   {
    "date": "2026-11-18",
    "symbol": "NVDA",
-   "exit": "Open",
-   "status": "open",
-   "pnl_pct": -1.5,
+   "exit": "2% stop",
+   "status": "closed",
+   "pnl_pct": -2.04,
    "rules": "current"
   },
   {
    "date": "2026-11-18",
    "symbol": "LLY",
-   "exit": "Open",
-   "status": "open",
-   "pnl_pct": -0.74,
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -1.2,
    "rules": "current"
   }
  ]
