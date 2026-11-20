@@ -1,18 +1,18 @@
 {
  "public": true,
- "generated_at": "2026-11-19T20:04:07+00:00",
- "trading_day": "2026-11-19",
+ "generated_at": "2026-11-20T15:29:09+00:00",
+ "trading_day": "2026-11-20",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": true,
-  "last_run_day": "2026-11-19",
+  "day_finalized": false,
+  "last_run_day": "2026-11-20",
   "positions_live": true
  },
  "account": {
-  "daily_return_pct": -0.01,
+  "daily_return_pct": 0.0,
   "cumulative_return_pct": -0.395,
-  "fee_share_pct": 65,
+  "fee_share_pct": 67,
   "open_positions": 0
  },
  "stats": {
@@ -24,30 +24,34 @@
   "current_rules_avg_pct": -0.32
  },
  "today": {
-  "run_at": "2026-11-19T15:28:56.826528+00:00",
-  "market_filter_blocked": [],
+  "run_at": "2026-11-20T15:28:58.629097+00:00",
+  "market_filter_blocked": [
+   "VTI",
+   "BTC/USD",
+   "JPM"
+  ],
   "decisions": [
    {
     "symbol": "AAPL",
-    "signal": "buy",
-    "confidence": 0.84,
-    "day_change_percent": -0.95,
-    "why": "DCA buy: quality asset on a mild dip",
-    "outcome": "Bought"
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": -0.02,
+    "why": "Wait for better value entry",
+    "outcome": "Held"
    },
    {
     "symbol": "MSFT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 1.73,
+    "day_change_percent": -0.28,
     "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
-    "symbol": "NVDA",
+    "symbol": "GOOGL",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 1.84,
+    "day_change_percent": 2.15,
     "why": "Wait for better value entry",
     "outcome": "Held"
    },
@@ -55,7 +59,15 @@
     "symbol": "VTI",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.08,
+    "day_change_percent": -0.85,
+    "why": "Market filter: QQQ -2.08% at entry is below -0.3%; dip buy skipped",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "LLY",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": 0.86,
     "why": "Wait for better value entry",
     "outcome": "Held"
    },
@@ -63,77 +75,44 @@
     "symbol": "BTC/USD",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.66,
-    "why": "Wait for better value entry",
+    "day_change_percent": -2.62,
+    "why": "Market filter: QQQ -2.08% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
-    "symbol": "LLY",
-    "signal": "buy",
-    "confidence": 0.85,
-    "day_change_percent": -1.46,
-    "why": "DCA buy: quality asset on a mild dip",
-    "outcome": "Bought"
-   },
-   {
     "symbol": "WMT",
-    "signal": "buy",
-    "confidence": 0.85,
-    "day_change_percent": -1.25,
-    "why": "DCA buy: quality asset on a mild dip",
-    "outcome": "Bought"
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": 3.28,
+    "why": "Wait for better value entry",
+    "outcome": "Held"
    },
    {
     "symbol": "JPM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.26,
-    "why": "Wait for better value entry",
+    "day_change_percent": -0.49,
+    "why": "Market filter: QQQ -2.08% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "V",
-    "signal": "buy",
-    "confidence": 0.97,
-    "day_change_percent": -1.74,
-    "why": "DCA buy: quality asset on a deep pullback. Skipped: concurrent position cap reached (3/3 open); new BUY orders wait for a free slot.",
-    "outcome": "Skipped"
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": 1.21,
+    "why": "Wait for better value entry",
+    "outcome": "Held"
    },
    {
     "symbol": "XOM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.27,
+    "day_change_percent": 0.84,
     "why": "Wait for better value entry",
     "outcome": "Held"
    }
   ],
-  "trades": [
-   {
-    "date": "2026-11-19",
-    "symbol": "AAPL",
-    "exit": "3 PM close-out",
-    "status": "closed",
-    "pnl_pct": -0.13,
-    "rules": "current"
-   },
-   {
-    "date": "2026-11-19",
-    "symbol": "LLY",
-    "exit": "3 PM close-out",
-    "status": "closed",
-    "pnl_pct": -0.77,
-    "rules": "current"
-   },
-   {
-    "date": "2026-11-19",
-    "symbol": "WMT",
-    "exit": "3 PM close-out",
-    "status": "closed",
-    "pnl_pct": 0.13,
-    "rules": "current"
-   }
-  ],
+  "trades": [],
   "positions": []
  },
  "history": [
@@ -448,6 +427,14 @@
    "cumulative_return_pct": -0.395,
    "note": "",
    "finalized": true
+  },
+  {
+   "date": "2026-11-20",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.395,
+   "note": "",
+   "finalized": false
   }
  ],
  "trades": [
