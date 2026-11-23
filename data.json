@@ -1,27 +1,27 @@
 {
  "public": true,
- "generated_at": "2026-11-23T19:10:05+00:00",
+ "generated_at": "2026-11-23T20:03:51+00:00",
  "trading_day": "2026-11-23",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": false,
+  "day_finalized": true,
   "last_run_day": "2026-11-23",
   "positions_live": true
  },
  "account": {
-  "daily_return_pct": 0.005,
-  "cumulative_return_pct": -0.39,
-  "fee_share_pct": 68,
-  "open_positions": 2
+  "daily_return_pct": 0.0,
+  "cumulative_return_pct": -0.395,
+  "fee_share_pct": 67,
+  "open_positions": 0
  },
  "stats": {
-  "trades_total": 77,
-  "wins": 33,
-  "win_rate_pct": 42.9,
-  "current_rules_trades": 33,
+  "trades_total": 79,
+  "wins": 34,
+  "win_rate_pct": 43.0,
+  "current_rules_trades": 35,
   "current_rules_stopouts": 3,
-  "current_rules_avg_pct": -0.32
+  "current_rules_avg_pct": -0.28
  },
  "today": {
   "run_at": "2026-11-23T15:28:57.366453+00:00",
@@ -112,30 +112,21 @@
    {
     "date": "2026-11-23",
     "symbol": "WMT",
-    "exit": "Open",
-    "status": "open",
-    "pnl_pct": 1.23,
+    "exit": "3 PM close-out",
+    "status": "closed",
+    "pnl_pct": 1.38,
     "rules": "current"
    },
    {
     "date": "2026-11-23",
     "symbol": "XOM",
-    "exit": "Open",
-    "status": "open",
-    "pnl_pct": -0.44,
+    "exit": "3 PM close-out",
+    "status": "closed",
+    "pnl_pct": -0.82,
     "rules": "current"
    }
   ],
-  "positions": [
-   {
-    "symbol": "WMT",
-    "unrealized_pct": 1.23
-   },
-   {
-    "symbol": "XOM",
-    "unrealized_pct": -0.44
-   }
-  ]
+  "positions": []
  },
  "history": [
   {
@@ -461,10 +452,10 @@
   {
    "date": "2026-11-23",
    "trades": 2,
-   "daily_return_pct": 0.005,
-   "cumulative_return_pct": -0.39,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.395,
    "note": "",
-   "finalized": false
+   "finalized": true
   }
  ],
  "trades": [
@@ -1087,17 +1078,17 @@
   {
    "date": "2026-11-23",
    "symbol": "WMT",
-   "exit": "Open",
-   "status": "open",
-   "pnl_pct": 1.23,
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": 1.38,
    "rules": "current"
   },
   {
    "date": "2026-11-23",
    "symbol": "XOM",
-   "exit": "Open",
-   "status": "open",
-   "pnl_pct": -0.44,
+   "exit": "3 PM close-out",
+   "status": "closed",
+   "pnl_pct": -0.82,
    "rules": "current"
   }
  ]
