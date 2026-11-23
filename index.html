@@ -336,7 +336,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       : [['Day'], ['Trades', 1], ['P&L', 1], ['Fees', 1], ['Cumulative', 1], ['Note']]);
     $('days').replaceChildren(...d.history.slice().reverse().map((x) => row(pub
       ? [td(dayLabel(x.date)), td(String(x.trades), 'num'), td(pct(x.daily_return_pct, 3), 'num ' + tone(x.daily_return_pct)), td(pct(x.cumulative_return_pct), 'num ' + tone(x.cumulative_return_pct)), td(x.note || '', 'why')]
-      : [td(dayLabel(x.date)), td(String(x.trades), 'num'), td(money(x.daily_pnl, 2, true), 'num ' + tone(x.daily_pnl)), td(money(x.fees, 2, true), 'num ' + tone(x.fees)),
+      : [td(dayLabel(x.date)), td(String(x.trades), 'num'), td(money(x.daily_pnl, 2, true), 'num ' + tone(x.daily_pnl)), (x.fees_pending ? td('posts tonight', 'num') : td(money(x.fees, 2, true), 'num ' + tone(x.fees))),
          td(money(x.cumulative_pnl, 2, true), 'num ' + tone(x.cumulative_pnl)), td(x.note || '', 'why')])));
 
     $('curve-title').textContent = pub ? 'Return since launch' : 'Cumulative P&L';
