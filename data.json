@@ -1,6 +1,6 @@
 {
  "public": true,
- "generated_at": "2026-11-23T17:10:40+00:00",
+ "generated_at": "2026-11-23T19:10:05+00:00",
  "trading_day": "2026-11-23",
  "live_since": "2026-09-28",
  "status": {
@@ -10,9 +10,9 @@
   "positions_live": true
  },
  "account": {
-  "daily_return_pct": 0.0,
-  "cumulative_return_pct": -0.395,
-  "fee_share_pct": 67,
+  "daily_return_pct": 0.005,
+  "cumulative_return_pct": -0.39,
+  "fee_share_pct": 68,
   "open_positions": 2
  },
  "stats": {
@@ -114,7 +114,7 @@
     "symbol": "WMT",
     "exit": "Open",
     "status": "open",
-    "pnl_pct": 0.85,
+    "pnl_pct": 1.23,
     "rules": "current"
    },
    {
@@ -122,18 +122,18 @@
     "symbol": "XOM",
     "exit": "Open",
     "status": "open",
-    "pnl_pct": -0.23,
+    "pnl_pct": -0.44,
     "rules": "current"
    }
   ],
   "positions": [
    {
     "symbol": "WMT",
-    "unrealized_pct": 0.84
+    "unrealized_pct": 1.23
    },
    {
     "symbol": "XOM",
-    "unrealized_pct": -0.23
+    "unrealized_pct": -0.44
    }
   ]
  },
@@ -461,8 +461,8 @@
   {
    "date": "2026-11-23",
    "trades": 2,
-   "daily_return_pct": 0.0,
-   "cumulative_return_pct": -0.395,
+   "daily_return_pct": 0.005,
+   "cumulative_return_pct": -0.39,
    "note": "",
    "finalized": false
   }
@@ -1089,7 +1089,7 @@
    "symbol": "WMT",
    "exit": "Open",
    "status": "open",
-   "pnl_pct": 0.85,
+   "pnl_pct": 1.23,
    "rules": "current"
   },
   {
@@ -1097,7 +1097,7 @@
    "symbol": "XOM",
    "exit": "Open",
    "status": "open",
-   "pnl_pct": -0.23,
+   "pnl_pct": -0.44,
    "rules": "current"
   }
  ]
