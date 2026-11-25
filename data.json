@@ -1,12 +1,12 @@
 {
  "public": true,
- "generated_at": "2026-11-24T20:04:02+00:00",
- "trading_day": "2026-11-24",
+ "generated_at": "2026-11-25T15:29:16+00:00",
+ "trading_day": "2026-11-25",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": true,
-  "last_run_day": "2026-11-24",
+  "day_finalized": false,
+  "last_run_day": "2026-11-25",
   "positions_live": true
  },
  "account": {
@@ -24,19 +24,33 @@
   "current_rules_avg_pct": -0.28
  },
  "today": {
-  "run_at": "2026-11-24T15:28:52.731580+00:00",
+  "run_at": "2026-11-25T15:29:06.437317+00:00",
   "market_filter_blocked": [
+   "AAPL",
+   "MSFT",
    "NVDA",
    "VTI",
-   "BTC/USD"
+   "LLY",
+   "BTC/USD",
+   "WMT",
+   "JPM",
+   "V"
   ],
   "decisions": [
    {
     "symbol": "AAPL",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.55,
-    "why": "Wait for better value entry",
+    "day_change_percent": -2.33,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "outcome": "Held"
+   },
+   {
+    "symbol": "MSFT",
+    "signal": "hold",
+    "confidence": 0.55,
+    "day_change_percent": -3.46,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
@@ -44,70 +58,62 @@
     "signal": "hold",
     "confidence": 0.55,
     "day_change_percent": -7.81,
-    "why": "Market filter: QQQ -2.52% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
-   },
-   {
-    "symbol": "MSFT",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": 0.3,
-    "why": "Wait for better value entry",
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "VTI",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -1.13,
-    "why": "Market filter: QQQ -2.52% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": -2.78,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "LLY",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 2.84,
-    "why": "Wait for better value entry",
+    "day_change_percent": -1.84,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "BTC/USD",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -2.44,
-    "why": "Market filter: QQQ -2.52% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": -3.24,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "WMT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 1.71,
-    "why": "Wait for better value entry",
+    "day_change_percent": -0.45,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "JPM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.2,
-    "why": "Wait for better value entry",
+    "day_change_percent": -2.18,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "V",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 1.11,
-    "why": "Wait for better value entry",
+    "day_change_percent": -0.36,
+    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
     "outcome": "Held"
    },
    {
     "symbol": "XOM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.97,
+    "day_change_percent": 0.3,
     "why": "Wait for better value entry",
     "outcome": "Held"
    }
@@ -451,6 +457,14 @@
    "cumulative_return_pct": -0.395,
    "note": "",
    "finalized": true
+  },
+  {
+   "date": "2026-11-25",
+   "trades": 0,
+   "daily_return_pct": 0.0,
+   "cumulative_return_pct": -0.395,
+   "note": "",
+   "finalized": false
   }
  ],
  "trades": [
