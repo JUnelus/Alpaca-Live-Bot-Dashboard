@@ -1,19 +1,19 @@
 {
  "public": true,
- "generated_at": "2026-11-25T20:03:47+00:00",
- "trading_day": "2026-11-25",
+ "generated_at": "2026-11-27T15:29:33+00:00",
+ "trading_day": "2026-11-27",
  "live_since": "2026-09-28",
  "status": {
   "automation_blocked": false,
-  "day_finalized": true,
-  "last_run_day": "2026-11-25",
+  "day_finalized": false,
+  "last_run_day": "2026-11-27",
   "positions_live": true
  },
  "account": {
-  "daily_return_pct": 0.0,
-  "cumulative_return_pct": -0.395,
-  "fee_share_pct": 70,
-  "open_positions": 0
+  "daily_return_pct": -0.005,
+  "cumulative_return_pct": -0.4,
+  "fee_share_pct": 69,
+  "open_positions": 1
  },
  "stats": {
   "trades_total": 79,
@@ -24,102 +24,106 @@
   "current_rules_avg_pct": -0.28
  },
  "today": {
-  "run_at": "2026-11-25T15:29:06.437317+00:00",
-  "market_filter_blocked": [
-   "AAPL",
-   "MSFT",
-   "NVDA",
-   "VTI",
-   "LLY",
-   "BTC/USD",
-   "WMT",
-   "JPM",
-   "V"
-  ],
+  "run_at": "2026-11-27T15:29:26.023794+00:00",
+  "market_filter_blocked": [],
   "decisions": [
    {
     "symbol": "AAPL",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -2.33,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.76,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "MSFT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -3.46,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.07,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "NVDA",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -7.81,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.97,
+    "day_change_percent": -1.7,
+    "why": "DCA buy: quality asset on a deep pullback",
+    "outcome": "Bought"
    },
    {
     "symbol": "VTI",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -2.78,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.97,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "LLY",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -1.84,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.02,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "BTC/USD",
-    "signal": "hold",
-    "confidence": 0.55,
-    "day_change_percent": -3.24,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
-    "outcome": "Held"
+    "signal": "buy",
+    "confidence": 0.85,
+    "day_change_percent": -1.2,
+    "why": "DCA buy: quality asset on a mild dip. Skipped: unable to guarantee broker-side protective stop placement for BTC/USD.",
+    "outcome": "Skipped"
    },
    {
     "symbol": "WMT",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.45,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 0.02,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "JPM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -2.18,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 2.05,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "V",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": -0.36,
-    "why": "Market filter: QQQ -4.39% at entry is below -0.3%; dip buy skipped",
+    "day_change_percent": 1.59,
+    "why": "Wait for better value entry",
     "outcome": "Held"
    },
    {
     "symbol": "XOM",
     "signal": "hold",
     "confidence": 0.55,
-    "day_change_percent": 0.3,
+    "day_change_percent": 1.85,
     "why": "Wait for better value entry",
     "outcome": "Held"
    }
   ],
-  "trades": [],
-  "positions": []
+  "trades": [
+   {
+    "date": "2026-11-27",
+    "symbol": "NVDA",
+    "exit": "Open",
+    "status": "open",
+    "pnl_pct": 0.0,
+    "rules": "current"
+   }
+  ],
+  "positions": [
+   {
+    "symbol": "NVDA",
+    "unrealized_pct": 0.0
+   }
+  ]
  },
  "history": [
   {
@@ -465,6 +469,14 @@
    "cumulative_return_pct": -0.395,
    "note": "",
    "finalized": true
+  },
+  {
+   "date": "2026-11-27",
+   "trades": 1,
+   "daily_return_pct": -0.005,
+   "cumulative_return_pct": -0.4,
+   "note": "",
+   "finalized": false
   }
  ],
  "trades": [
@@ -1098,6 +1110,14 @@
    "exit": "3 PM close-out",
    "status": "closed",
    "pnl_pct": -0.82,
+   "rules": "current"
+  },
+  {
+   "date": "2026-11-27",
+   "symbol": "NVDA",
+   "exit": "Open",
+   "status": "open",
+   "pnl_pct": 0.0,
    "rules": "current"
   }
  ]
